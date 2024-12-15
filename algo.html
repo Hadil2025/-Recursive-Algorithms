@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function estAnneeBissextile(annee) {
+            if ((annee % 4 === 0 && annee % 100 !== 0) || (annee % 400 === 0)) {
+                return true;
+            } 
+            else {
+                return false;
+            }
+        }
+     let annee = parseInt(prompt("Entrez une année pour vérifier si elle est bissextile :"));
+     if (estAnneeBissextile(annee)) {
+     console.log(`L'année ${annee} est bissextile.`);
+     } 
+     else {
+     console.log(`L'année ${annee} n'est pas bissextile.`);
+
+     }
+        function prixBillet(age) {
+            if (age <= 12) {
+                return 10;
+            }
+             else if (age >= 13 && age <= 17) {
+                return 15; 
+            } 
+            else {
+                return 20; 
+            }  
+        }
+        let age = parseInt(prompt("Entrez votre âge pour savoir le prix du billet de cinéma :"));
+        let prix = prixBillet(age);
+        console.log(`Le prix du billet est de ${prix} $`); 
+
+     
+        function estPalindrome(str) {
+            const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+            if (cleanedStr.length <= 1) {
+                return true;
+            }
+        
+            if (cleanedStr[0] === cleanedStr[cleanedStr.length - 1]) {
+                return estPalindrome(cleanedStr.slice(1, cleanedStr.length - 1));
+            }
+            return false;
+        }
+        
+    let str = prompt("Entrez une chaîne pour vérifier si c'est un palindrome :");
+       if (estPalindrome(str)) {
+         console.log("La chaîne est un palindrome.");
+        } 
+        else {
+            console.log("La chaîne n'est pas un palindrome.");
+        }
+        
+
+    </script>
+</body>
+</html>
